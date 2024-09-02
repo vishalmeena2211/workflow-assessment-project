@@ -16,8 +16,8 @@ export const OutputNode = ({ id, data }) => {
     setCurrName(e.target.value);
   };
 
-  const handleTypeChange = (e) => {
-    setOutputType(e.target.value);
+  const handleTypeChange = (value) => {
+    setOutputType(value);
   };
 
   return (
@@ -44,7 +44,7 @@ export const OutputNode = ({ id, data }) => {
 
       {/* Type Select */}
       <div className="mx-2 mb-2">
-        <Label htmlFor="output-type-select">Type</Label>
+        <Label>Type</Label>
         <Select value={outputType} onValueChange={handleTypeChange}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select Type" />

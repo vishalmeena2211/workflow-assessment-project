@@ -1,24 +1,32 @@
-// toolbar.js
-
 import { ModeToggle } from './mode-toggler';
 import { DraggableNode } from './draggableNode';
 import { Calendar, ChartBar, Command, FileInput, FileOutputIcon, Hash, Key, Mail, TextIcon } from 'lucide-react';
 
 export const PipelineToolbar = () => {
+    // Array of node configurations
+    const nodes = [
+        { type: 'customInput', label: 'Input', icon: <FileInput /> },
+        { type: 'llm', label: 'LLM', icon: <ChartBar /> },
+        { type: 'customOutput', label: 'Output', icon: <FileOutputIcon /> },
+        { type: 'text', label: 'Text', icon: <TextIcon /> },
+        { type: 'button', label: 'Button', icon: <Command /> },
+        { type: 'date', label: 'Date', icon: <Calendar /> },
+        { type: 'email', label: 'Email', icon: <Mail /> },
+        { type: 'number', label: 'Number', icon: <Hash /> },
+        { type: 'password', label: 'Password', icon: <Key /> }
+    ];
 
     return (
-        <div style={{ padding: '10px' }}>
-            <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                <DraggableNode type='customInput' label='Input' icon={<FileInput fontSize={12} />} />
-                <DraggableNode type='llm' label='LLM' icon={<ChartBar />} />
-                <DraggableNode type='customOutput' label='Output' icon={<FileOutputIcon fontSize={12} />} />
-                <DraggableNode type='text' label='Text' icon={<TextIcon fontSize={12} />} />
-                <DraggableNode type='button' label='Button' icon={<Command fontSize={12} />} />
-                <DraggableNode type='date' label='Date' icon={<Calendar fontSize={12} />} />
-                <DraggableNode type='email' label='Email' icon={<Mail fontSize={12} />} />
-                <DraggableNode type='number' label='Number' icon={<Hash fontSize={12} />} />
-                <DraggableNode type='password' label='Password' icon={<Key fontSize={12} />} />
-
+        <div className='p-4'>
+            <div className='mt-1 flex flex-wrap gap-2'>
+                {nodes.map((node, index) => (
+                    <DraggableNode
+                        key={index}
+                        type={node.type}
+                        label={node.label}
+                        icon={node.icon}
+                    />
+                ))}
                 <ModeToggle />
             </div>
         </div>

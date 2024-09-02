@@ -30,8 +30,9 @@ export const SubmitButton = () => {
 
         <div className="flex justify-center items-center md:py-10 py-4">
             <Button onClick={handleSubmit} variant='ghost' className='border rounded flex gap-2'>
-                {<Send />}
-                Submit</Button>
+                <Send />
+                Submit
+            </Button>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-// ui.js
+// ui.jsx
 // Displays the drag-and-drop UI
 // --------------------------------------------------
 
@@ -6,15 +6,10 @@ import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from '../zustand/store';
 import { shallow } from 'zustand/shallow';
-import { InputNode } from './nodes/inputNode';
-import { LLMNode } from './nodes/llmNode';
-import { OutputNode } from './nodes/outputNode';
-import { TextNode } from './nodes/textNode';
-import { ButtonNode } from './nodes/buttonNode';
-import { DateNode } from './nodes/dateNode';
-import { EmailNode } from './nodes/emailNode';
-import { NumberNode } from './nodes/numberNode';
-import { PasswordNode } from './nodes/passwordNode';
+import {
+  ButtonNode, DateNode, EmailNode, NumberNode,
+  OutputNode, PasswordNode, TextNode, InputNode, LLMNode
+} from './nodes';
 
 
 import 'reactflow/dist/style.css';
@@ -26,11 +21,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
-  button:ButtonNode,
-  date:DateNode,
-  email:EmailNode,
-  number:NumberNode,
-  password:PasswordNode
+  button: ButtonNode,
+  date: DateNode,
+  email: EmailNode,
+  number: NumberNode,
+  password: PasswordNode
 };
 
 const selector = (state) => ({
