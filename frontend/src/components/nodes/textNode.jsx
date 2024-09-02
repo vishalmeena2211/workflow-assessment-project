@@ -41,7 +41,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Position } from 'reactflow';
-import BaseNode from './BaseNode'; // Ensure correct import path
+import BaseNode from './baseNode'; // Ensure correct import path
 import { Label } from '../ui/label';
 import { Text } from 'lucide-react';
 import useAutosizeTextArea from '../autoResizeTextArea';
