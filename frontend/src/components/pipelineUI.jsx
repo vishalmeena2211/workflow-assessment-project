@@ -4,12 +4,18 @@
 
 import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
-import { useStore } from '../store';
+import { useStore } from '../zustand/store';
 import { shallow } from 'zustand/shallow';
 import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
+import { ButtonNode } from './nodes/buttonNode';
+import { DateNode } from './nodes/dateNode';
+import { EmailNode } from './nodes/emailNode';
+import { NumberNode } from './nodes/numberNode';
+import { PasswordNode } from './nodes/passwordNode';
+
 
 import 'reactflow/dist/style.css';
 
@@ -20,6 +26,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  button:ButtonNode,
+  date:DateNode,
+  email:EmailNode,
+  number:NumberNode,
+  password:PasswordNode
 };
 
 const selector = (state) => ({
@@ -105,8 +116,8 @@ export const PipelineUI = () => {
           snapGrid={[gridSize, gridSize]}
           connectionLineType='smoothstep'
         >
-          <Background color="#aaa" gap={gridSize} />
-          <Controls />
+          <Background gap={gridSize} />
+          <Controls showFitView={true} />
           <MiniMap className='bg-background' />
         </ReactFlow>
       </div>

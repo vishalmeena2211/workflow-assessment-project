@@ -17,9 +17,8 @@ export const SubmitButton = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8000/pipelines/parse',pipelineData);
+            const response = await axios.post('http://localhost:8000/pipelines/parse', pipelineData);
             const result = response.data;
-
             // Displaying an alert with the response data
             alert(`Number of Nodes: ${result.num_nodes}, Number of Edges: ${result.num_edges}, Is DAG: ${result.is_dag}`);
         } catch (error) {
@@ -29,7 +28,7 @@ export const SubmitButton = () => {
 
     return (
 
-        <div className="flex justify-center items-center py-10">
+        <div className="flex justify-center items-center md:py-10 py-4">
             <Button onClick={handleSubmit} variant='ghost' className='border rounded flex gap-2'>
                 {<Send />}
                 Submit</Button>
