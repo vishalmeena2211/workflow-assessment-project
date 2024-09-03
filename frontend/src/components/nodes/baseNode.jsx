@@ -13,7 +13,6 @@ const BaseNode = ({ id, title, icon, handles }) => {
   }, [handles, id, updateNodeInternals]);
 
 
-
   return (
     <div >
       {/* Render handles */}

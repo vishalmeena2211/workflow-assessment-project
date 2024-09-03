@@ -27,12 +27,11 @@ export const InputNode = ({ id, data }) => {
         <div className='w-52 h-fit py-5 border border-border rounded-[30px] bg-card hover:border hover:border-green-500 transition-all duration-300 ease-in-out'>
             <BaseNode
                 title="Input"
-                icon={<FormInput />}  // Pass the icon if needed
+                icon={<FormInput />}
                 handles={[
                     { type: 'source', position: Position.Right, id: `${id}-value` },
                 ]}
             />
-            {/* Name Input */}
             <div className="mb-2 mx-2">
                 <Label htmlFor="name-input">Name</Label>
                 <Input
@@ -45,7 +44,6 @@ export const InputNode = ({ id, data }) => {
                 />
             </div>
 
-            {/* Type Selector */}
             <div className="mx-2">
                 <Label>Type</Label>
                 <Select value={inputType} onValueChange={handleTypeChange}>

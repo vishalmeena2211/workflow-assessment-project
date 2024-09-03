@@ -6,7 +6,6 @@ import { Input } from '../ui/input';
 import { Mail } from 'lucide-react';
 
 export const EmailNode = ({ id, data }) => {
-    // State management for email input
     const [email, setEmail] = useState(data?.email || '');
 
     const handleEmailChange = (e) => setEmail(e.target.value);
@@ -15,12 +14,11 @@ export const EmailNode = ({ id, data }) => {
         <div className='w-52 h-fit py-5 border border-border rounded-[30px] bg-card hover:border hover:border-green-500 transition-all duration-300 ease-in-out'>
             <BaseNode
                 title="Email"
-                icon={<Mail />}  // Pass the icon for email
+                icon={<Mail />} 
                 handles={[
                     { type: 'source', position: Position.Right, id: `${id}-output` },
                 ]}
             />
-            {/* Email Input */}
             <div className="mx-2 mb-2">
                 <Label htmlFor="email-input">Email</Label>
                 <Input

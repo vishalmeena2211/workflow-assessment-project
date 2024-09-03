@@ -6,7 +6,6 @@ import { Input } from '../ui/input';
 import { Command } from 'lucide-react';
 
 export const ButtonNode = ({ id, data }) => {
-    // State management for button label and click action
     const [buttonLabel, setButtonLabel] = useState(data?.label || 'Click Me');
     const [clickAction, setClickAction] = useState(data?.action || '');
 
@@ -17,12 +16,11 @@ export const ButtonNode = ({ id, data }) => {
         <div className='w-52 h-fit py-5 border border-border rounded-[30px] bg-card hover:border hover:border-green-500 transition-all duration-300 ease-in-out'>
             <BaseNode
                 title="Button"
-                icon={<Command/>}  // Pass the icon for button
+                icon={<Command/>}  
                 handles={[
                     { type: 'source', position: Position.Right, id: `${id}-output` },
                 ]}
             />
-            {/* Button Label Input */}
             <div className="mx-2 mb-2">
                 <Label htmlFor="button-label-input">Button Label</Label>
                 <Input
@@ -34,7 +32,6 @@ export const ButtonNode = ({ id, data }) => {
                     placeholder="Enter button label"
                 />
             </div>
-            {/* Button Action Input */}
             <div className="mx-2 mb-2">
                 <Label htmlFor="button-action-input">Click Action</Label>
                 <Input

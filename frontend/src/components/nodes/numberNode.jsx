@@ -6,7 +6,6 @@ import { Input } from '../ui/input';
 import { Hash } from 'lucide-react';
 
 export const NumberNode = ({ id, data }) => {
-    // State management for number input
     const [numberValue, setNumberValue] = useState(data?.number || 0);
 
     const handleNumberChange = (e) => setNumberValue(e.target.value);
@@ -15,12 +14,11 @@ export const NumberNode = ({ id, data }) => {
         <div className='w-52 h-fit py-5 border border-border rounded-[30px] bg-card hover:border hover:border-green-500 transition-all duration-300 ease-in-out'>
             <BaseNode
                 title="Number"
-                icon={<Hash />}  // Pass the icon for number
+                icon={<Hash />} 
                 handles={[
                     { type: 'source', position: Position.Right, id: `${id}-output` },
                 ]}
             />
-            {/* Number Input */}
             <div className="mx-2 mb-2">
                 <Label htmlFor="number-input">Number</Label>
                 <Input

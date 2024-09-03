@@ -48,6 +48,7 @@ export const TextNode = ({ id, data }) => {
                     <textarea
                         ref={textAreaRef}
                         className='
+                            max-h-40
                             mt-1
                             block
                             w-full

@@ -25,7 +25,6 @@ export const DateNode = ({ id, data }) => {
                     { type: 'source', position: Position.Right, id: `${id}-output` },
                 ]}
             />
-            {/* Date Input */}
             <div className="mx-2 mb-2">
                 <Label htmlFor="date-input">Date</Label>
                 <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>

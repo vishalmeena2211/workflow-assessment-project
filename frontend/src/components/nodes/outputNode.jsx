@@ -1,3 +1,4 @@
+//OutputNode Component it renders a node with output type and name.
 
 import { useState } from 'react';
 import { Position } from 'reactflow';
@@ -24,12 +25,11 @@ export const OutputNode = ({ id, data }) => {
     <div className='w-52 h-fit py-5 border border-border rounded-[30px] bg-card hover:border hover:border-green-500 transition-all duration-300 ease-in-out'>
       <BaseNode
         title="Output"
-        icon={<FileOutputIcon />} // Pass the icon if needed
+        icon={<FileOutputIcon />}
         handles={[
           { type: 'target', position: Position.Left, id: `${id}-value` },
         ]}
       />
-      {/* Name Input */}
       <div className="mx-2 mb-2">
         <Label htmlFor="output-name-input">Name</Label>
         <Input
@@ -42,7 +42,6 @@ export const OutputNode = ({ id, data }) => {
         />
       </div>
 
-      {/* Type Select */}
       <div className="mx-2 mb-2">
         <Label>Type</Label>
         <Select value={outputType} onValueChange={handleTypeChange}>

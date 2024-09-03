@@ -6,7 +6,6 @@ import { Input } from '../ui/input';
 import { Key } from 'lucide-react';
 
 export const PasswordNode = ({ id, data }) => {
-    // State management for password input
     const [password, setPassword] = useState(data?.password || '');
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
@@ -14,12 +13,11 @@ export const PasswordNode = ({ id, data }) => {
         <div className='w-52 h-fit py-5 border border-border rounded-[30px] bg-card hover:border hover:border-green-500 transition-all duration-300 ease-in-out'>
             <BaseNode
                 title="Password"
-                icon={<Key />}  // Pass the icon for password
+                icon={<Key />}
                 handles={[
                     { type: 'source', position: Position.Right, id: `${id}-output` },
                 ]}
             />
-            {/* Password Input */}
             <div className="mx-2 mb-2">
                 <Label htmlFor="password-input">Password</Label>
                 <Input

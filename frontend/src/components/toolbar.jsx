@@ -3,7 +3,7 @@ import { DraggableNode } from './draggableNode';
 import { Calendar, ChartBar, Command, FileInput, FileOutputIcon, Hash, Key, Mail, TextIcon } from 'lucide-react';
 
 export const PipelineToolbar = () => {
-    // Array of node configurations
+
     const nodes = [
         { type: 'customInput', label: 'Input', icon: <FileInput /> },
         { type: 'llm', label: 'LLM', icon: <ChartBar /> },
