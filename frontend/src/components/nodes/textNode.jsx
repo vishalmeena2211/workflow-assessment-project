@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Position } from 'reactflow';
-import BaseNode from './baseNode'; // Ensure correct import path
+import BaseNode from './baseNode';
 import { Label } from '../ui/label';
 import { Text } from 'lucide-react';
 import useAutosizeTextArea from '../autoResizeTextArea';
@@ -41,7 +41,7 @@ export const TextNode = ({ id, data }) => {
                 id={id}
                 title="Text"
                 icon={<Text />}
-                handles={handles}
+                handles={[...handles, { type: 'source', position: Position.Right, id: `${id}-output` }]}
             />
             <div className="mx-2 mb-2">
                 <Label className='flex flex-col' htmlFor="text-input">Text

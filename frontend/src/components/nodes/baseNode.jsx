@@ -3,7 +3,7 @@ import { Separator } from '../ui/separator';
 import { BreadcrumbWithCustomSeparator } from '../BreadcrumbWithCustomSeparator';
 import { useEffect } from 'react';
 
-const BaseNode = ({ id,title, icon, handles }) => {
+const BaseNode = ({ id, title, icon, handles }) => {
 
   const updateNodeInternals = useUpdateNodeInternals();
 
@@ -18,17 +18,17 @@ const BaseNode = ({ id,title, icon, handles }) => {
     <div >
       {/* Render handles */}
       {handles?.map((handle, idx) => (
-          <Handle
-            key={idx}
-            type={handle.type}
-            position={handle.position}
-            style={handle.style}
-            id={handle.id}
-          >
-            {handle.variable && <span className='absolute -left-16 w-12 overflow-x-hidden'>
-              {handle.variable}
-            </span>}
-          </Handle>
+        <Handle
+          key={idx}
+          type={handle.type}
+          position={handle.position}
+          style={handle.style}
+          id={handle.id}
+        >
+          {handle.variable && <span className='absolute -left-16 w-12 overflow-x-hidden'>
+            {handle.variable}
+          </span>}
+        </Handle>
       ))}
 
       <div className='mx-2'>
