@@ -21,28 +21,28 @@ def is_dag(nodes, edges):
     for edge in edges:
         graph[edge['source']].append(edge['target'])
 
-    def dfs(node, visited, rec_stack):
+    def dfs(node, visited, path_visited):
         visited.add(node)
-        rec_stack.add(node)
+        path_visited.add(node)
 
         # Visit all the neighbors of the current node
         for neighbor in graph[node]:
             if neighbor not in visited:
-                if dfs(neighbor, visited, rec_stack):
+                if dfs(neighbor, visited, path_visited):
                     return True
-            elif neighbor in rec_stack:
+            elif neighbor in path_visited:
                 return True
 
-        rec_stack.remove(node)
+        path_visited.remove(node)
         return False
 
     visited = set()
-    rec_stack = set()
+    path_visited = set()
 
     # Perform DFS from each unvisited node
     for node in (n['id'] for n in nodes):
         if node not in visited:
-            if dfs(node, visited, rec_stack):
+            if dfs(node, visited, path_visited):
                 return False 
 
     return True  

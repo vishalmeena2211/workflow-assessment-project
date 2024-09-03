@@ -1,3 +1,5 @@
+//BaseNode a abstract component that is used to render the base structure of a node. It renders the handles and the title with icon of the node. It also updates the node internals when the handles change. It is used by other node components like TextNode, InputNode, ButtonNode, etc. to render the base structure of the node.
+
 import { Handle, useUpdateNodeInternals } from 'reactflow';
 import { Separator } from '../ui/separator';
 import { BreadcrumbWithCustomSeparator } from '../BreadcrumbWithCustomSeparator';
